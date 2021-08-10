@@ -1,5 +1,5 @@
 # __Portfolio__
-## [ _Card Captain_ ]  All about card - 자신도 모르는 나의 카드혜택 소개
+## [ _Card Captain_ ] - 카드의 모든 혜택
 ![메인](https://user-images.githubusercontent.com/81910342/128857814-db0351c5-4e07-4032-9793-282e99b680f2.png)
 ***
 >## ⁍ Project Info ⁌
@@ -90,10 +90,17 @@
   * 로그인
     <details>
  
-     * Header의 우측 로그인이미지를 클릭시
-       *  [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/8f52920ec304a59033318ea789e8009e1f28483b/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L790)
+     * Header의 우측 로그인이미지를 클릭시 로그인창을 생성합니다.
+        [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/8f52920ec304a59033318ea789e8009e1f28483b/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L790)
           ![로그인 1](https://user-images.githubusercontent.com/81910342/128860847-a8be7e75-7782-46fa-bd6f-f32a208fa175.PNG)
-
+     * 입력한 ID/PW의 데이터를 form으로 DB까지 넘겨줍니다.    
+        [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/8f52920ec304a59033318ea789e8009e1f28483b/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserContoller.java#L28)
+        [Sql code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/resources/mapper/User_SQL.xml#L4)
+     * 로그인 성공, 실패
+ 
+       |성공|실패|
+       |:--:|:--:|
+       |![로그인_성공](https://user-images.githubusercontent.com/81910342/128866029-30bf2359-ef1c-484e-8c9e-48a8cdcafcb2.PNG)||![로그인_실패](https://user-images.githubusercontent.com/81910342/128866685-08e37841-b417-4b75-bf33-92db50148e09.PNG)|
     </details>
   * 회원가입
   * ID/PW 찾기
