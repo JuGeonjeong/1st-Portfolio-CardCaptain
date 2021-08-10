@@ -5,14 +5,14 @@
 ***
 >### ⁍ Project Info ⁌
 * 프로젝트 명 : Card Captain
-* 개발 기간 :  ~ 2021.08.03
+* 개발 기간 :  2021.06.01 ~ 2021.08.03
 * 참여 인원 : 5명
 * 담당 업무 : 디자인레이아웃, 로그인, 회원가입, ID/PW 찾기, My page, 관리자페이지-회원
 ***
 >### ⁍ Use Technology ⁌
-* 개발 환경 : Windows10   
-* 사용 도구 : Eclipse, Sql Developer   
-* 사용 기술 : <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=JAVA&logoColor=white"/> <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=flat-square&logo=JAVASCRIPT&logoColor=black"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=black"/> <img src="https://img.shields.io/badge/SPRING-6DB33F?style=flat-square&logo=SPRING&logoColor=white"/> <img src="https://img.shields.io/badge/ORACLE-F80000?style=flat-square&logo=ORACLE&logoColor=black"/> <img src="https://img.shields.io/badge/JQUERY-0769AD?style=flat-square&logo=JQUERY&logoColor=white"/>
+* 개발 환경 : <img src="https://img.shields.io/badge/Windows 10-0078D6?style=flat-square&logo=Windows&logoColor=white"/>  
+* 사용 도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/SQL Developer-F80000?style=flat-square&logo=ORACLE&logoColor=white"/>    
+* 사용 기술 : <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=JAVA&logoColor=white"/> <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=flat-square&logo=JAVASCRIPT&logoColor=black"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/SPRING-6DB33F?style=flat-square&logo=SPRING&logoColor=white"/> <img src="https://img.shields.io/badge/ORACLE-F80000?style=flat-square&logo=ORACLE&logoColor=white"/> <img src="https://img.shields.io/badge/JQUERY-0769AD?style=flat-square&logo=JQUERY&logoColor=white"/>
 ***
 >### ⁍ Introduction ⁌
 ***
@@ -48,8 +48,8 @@
 
     |feature|Description|
     |:--:|:--:|
-    |ERD|![ERD1](https://user-images.githubusercontent.com/81910342/128693862-ac7c5596-d43a-4cf6-9fb6-a9fe7a0ea14f.PNG) ![ERD2](https://user-images.githubusercontent.com/81910342/128694136-ab6f3436-ff17-479c-8f53-40b67783dc53.PNG)
-    |메타데이터|![메타](https://user-images.githubusercontent.com/81910342/128813996-d17c7efc-ff09-44d4-bce0-fcf8103ade17.PNG)
+    |ERD|![erd11](https://user-images.githubusercontent.com/81910342/128841759-c2abd214-1f6d-4b4d-bc8a-0cd65f7b518e.PNG)
+    |메타데이터|![메타데이터](https://user-images.githubusercontent.com/81910342/128842663-d322d964-a2f4-46a4-81cf-ea16c90136e7.PNG)
     |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
