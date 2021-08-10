@@ -1,13 +1,13 @@
 # __Portfolio__
 
-## [ _Card Captain_ ]  All about card
-체크,신용카드의 모든정보 웹사이트 
+## [ _Card Captain_ ]  All about card - 자신도 모르는 나의 카드혜택
+보유하고 있거나 보유하지 않은 카드의 혜택들을 자세하고, 간단히 볼 수 있는 웹사이트
 ***
 >### ⁍ Project Info ⁌
-* 프로젝트 명 : CardCaptain
-* 개발 기간 :    
-* 참여 인원 : 5명   
-* 담당 업무 : 디자인레이아웃, 로그인, 회원가입, ID/PW 찾기, My page, 관리자페이지-회원    
+* 프로젝트 명 : Card Captain
+* 개발 기간 :  ~ 2021.08.03
+* 참여 인원 : 5명
+* 담당 업무 : 디자인레이아웃, 로그인, 회원가입, ID/PW 찾기, My page, 관리자페이지-회원
 ***
 >### ⁍ Use Technology ⁌
 * 개발 환경 : Windows10   
@@ -21,35 +21,56 @@
 * 제안
   * -123
 * 기획
-* 디자인 
-  <details>
-    <summary>이미지보기👀</summary>
-        
-  |feature|Description|
-  |:--:|:--:|
-  |메인페이지|![스크린샷(129)](https://user-images.githubusercontent.com/81910342/128695317-ec154d4f-f5f1-4c38-84d7-8e361b9dc896.png)
-  |카드사별 순위|![스크린샷(132)](https://user-images.githubusercontent.com/81910342/128695374-9338785c-10f3-464a-8a98-619d89c1ddf4.png)
-  |카드 비교|![스크린샷(133)](https://user-images.githubusercontent.com/81910342/128811160-3212877a-ce00-4c7e-bd75-3aee11c24208.png)
-  |전체카드순위|![스크린샷(131)](https://user-images.githubusercontent.com/81910342/128811220-5b7e736b-0ef0-432d-94a4-df3594a92118.png) ![스크린샷(137)](https://user-images.githubusercontent.com/81910342/128813314-38d65f0a-59f2-43db-9a37-11b0eb6de965.png)
-  
-</details>
+  * 카드는 왜 필요한가?
+    * 신용카드 및 체크카드의 사용 多
+    * 카드 및 체크카드 소비 일상화 
+    * 인터넷과 온라인 쇼핑몰 등 사업영역 발전
+  * 하지만 !
+    * 신용카드와 체크카드 종류는 수백가지가 존재, 그에 따른 혜택 또한 수백가지가 존재
+
+* 디자인
+  * CSS
+    <details>
+      <summary>이미지보기👀</summary>
+
+    |feature|Description|
+    |:--:|:--:|
+    |메인페이지|![스크린샷(129)](https://user-images.githubusercontent.com/81910342/128695317-ec154d4f-f5f1-4c38-84d7-8e361b9dc896.png)
+    |카드사별 순위|![스크린샷(132)](https://user-images.githubusercontent.com/81910342/128695374-9338785c-10f3-464a-8a98-619d89c1ddf4.png)
+    |카드 비교|![스크린샷(133)](https://user-images.githubusercontent.com/81910342/128811160-3212877a-ce00-4c7e-bd75-3aee11c24208.png)
+    |전체카드순위|![스크린샷(131)](https://user-images.githubusercontent.com/81910342/128811220-5b7e736b-0ef0-432d-94a4-df3594a92118.png) ![스크린샷(137)](https://user-images.githubusercontent.com/81910342/128813314-38d65f0a-59f2-43db-9a37-11b0eb6de965.png)
+
+  </details>
 
 * DB설계
     <details>
     <summary>이미지보기👀</summary>
 
-          |feature|Description|
-          |:--:|:--:|
-          |ERD|![ERD1](https://user-images.githubusercontent.com/81910342/128693862-ac7c5596-d43a-4cf6-9fb6-a9fe7a0ea14f.PNG) ![ERD2](https://user-images.githubusercontent.com/81910342/128694136-ab6f3436-ff17-479c-8f53-40b67783dc53.PNG)
-          |메타데이터|![메타](https://user-images.githubusercontent.com/81910342/128813996-d17c7efc-ff09-44d4-bce0-fcf8103ade17.PNG)
-          |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
+    |feature|Description|
+    |:--:|:--:|
+    |ERD|![ERD1](https://user-images.githubusercontent.com/81910342/128693862-ac7c5596-d43a-4cf6-9fb6-a9fe7a0ea14f.PNG) ![ERD2](https://user-images.githubusercontent.com/81910342/128694136-ab6f3436-ff17-479c-8f53-40b67783dc53.PNG)
+    |메타데이터|![메타](https://user-images.githubusercontent.com/81910342/128813996-d17c7efc-ff09-44d4-bce0-fcf8103ade17.PNG)
+    |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
 
 * 개발
+  * JavaScript
+    * 회원가입시 조건을 상황에 맞게 ....
+        <details>
+        <summary>이미지보기👀</summary>
+
+        |feature|Description|
+        |:--:|:--:|
+        |회원가입|![회원가입 2](https://user-images.githubusercontent.com/81910342/128839805-7bb7abce-0e3e-49e3-a538-f5642e4643f4.png)
+        |ID/PW 찾기|![IDPW 찾기](https://user-images.githubusercontent.com/81910342/128840482-ea6e997a-81ab-4247-b276-c9b10c922cfc.PNG)
+
+        
+        </details>
   * Ajax를 활용한 동적Web 구현
     * 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 대메뉴 이동을 제외하고는 화면의 리로드 없이 사용할 수 있도록 구현
-        <details><summary>이미지보기👀</summary>
+        <details>
+        <summary>이미지보기👀</summary>
 
         |feature|Description|
         |:--:|:--:|
