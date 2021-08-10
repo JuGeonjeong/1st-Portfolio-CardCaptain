@@ -40,9 +40,6 @@
   </details>
 
 * DB설계
-  * ERD - 
-  * 메타데이터 - 
-  * 테이블정의서 - 
     <details>
     <summary>이미지보기👀</summary>
 
@@ -83,7 +80,7 @@
   * 메인레이아웃
     <details>
  
-     * 대표색상을 이용하여 Header/Footer 구조와 메인의 슬라이드를 이용하여 각종 메뉴바의 가이드를 구성했습니다.
+     * 대표색상 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=flat-square&logo"/>를 이용하여 Header/Footer 구조와 메인의 슬라이드를 이용하여 각종 메뉴바의 가이드를 구성했습니다.
        ![메인레이아웃](https://user-images.githubusercontent.com/81910342/128856764-a0bd32db-5870-47b5-a0bf-1e261758a75b.PNG)
  
     </details>
@@ -97,10 +94,8 @@
         [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/8f52920ec304a59033318ea789e8009e1f28483b/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserContoller.java#L28)
         [Sql code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/resources/mapper/User_SQL.xml#L4)
      * 로그인 성공, 실패
+       ![성공,실패](https://user-images.githubusercontent.com/81910342/128869210-97652983-78a5-4a89-aa08-68a431ae2c2f.PNG)
  
-       |성공|실패|
-       |:--:|:--:|
-       |![로그인_성공](https://user-images.githubusercontent.com/81910342/128866029-30bf2359-ef1c-484e-8c9e-48a8cdcafcb2.PNG)||![로그인_실패](https://user-images.githubusercontent.com/81910342/128866685-08e37841-b417-4b75-bf33-92db50148e09.PNG)|
     </details>
   * 회원가입
   * ID/PW 찾기
