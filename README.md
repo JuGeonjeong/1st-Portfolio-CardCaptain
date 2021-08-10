@@ -57,6 +57,7 @@
 * 개발
   * JavaScript
     * 회원가입시 조건을 상황에 맞게 ....
+    * https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265
         <details>
         <summary>이미지보기👀</summary>
 
