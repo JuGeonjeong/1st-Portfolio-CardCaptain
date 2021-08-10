@@ -15,9 +15,9 @@
 
 >## ⁍ Introduction ⁌
 >## ⁍ Develop Detail ⁌
-* 제안
+* ### 제안
   * -123
-* 기획
+* ### 기획
   * 카드는 왜 필요한가?
     * 신용카드 및 체크카드의 사용 多
     * 카드 및 체크카드 소비 일상화 
@@ -25,7 +25,7 @@
   * 하지만 !
     * 신용카드와 체크카드 종류는 수백가지가 존재, 그에 따른 혜택 또한 수백가지가 존재
 
-* 디자인
+* ### 디자인
   * 청결하고 안정적인 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=for-the-badge&logo"/>(#0047AB)를 사용했습니다. 여러카드의 다양한 디자인들을 안정감을 더불어 돋보이게 해줍니다.
     <details>
       <summary>이미지보기👀</summary>
@@ -39,7 +39,7 @@
 
   </details>
 
-* DB설계
+* ### DB설계
     <details>
     <summary>이미지보기👀</summary>
 
@@ -50,7 +50,7 @@
     |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
-* 개발
+* ### 개발
   * JavaScript
     * 회원가입시 조건을 상황에 맞게 CSS처리 했습니다.
         [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265)
@@ -76,7 +76,7 @@
         
         </details>
         
-* 담당업무
+* ### 담당업무
   * 메인레이아웃
     <details>
  
@@ -98,6 +98,20 @@
  
     </details>
   * 회원가입
+    <details>
+ 
+      * 모든 조건 만족시 '가입완료'버튼이 활성화 됩니다.
+      * 이메일 인증 - 입력한 이메일로 랜덤코드 전송, 코드 일치시 가입가능합니다.
+        [JSP code👀]()
+        [Controller code👀]()
+        
+        <details>
+         
+         
+         
+        </details>
+ 
+    </details>
   * ID/PW 찾기
   * Mypage
   * 관리자페이지-회원
