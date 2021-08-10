@@ -1,23 +1,20 @@
 # __Portfolio__
-
-## [ _Card Captain_ ]  All about card - 자신도 모르는 나의 카드혜택
-보유하고 있거나 보유하지 않은 카드의 혜택들을 자세하고, 간단히 볼 수 있는 웹사이트
+## [ _Card Captain_ ]  All about card - 자신도 모르는 나의 카드혜택 소개
+![메인](https://user-images.githubusercontent.com/81910342/128857814-db0351c5-4e07-4032-9793-282e99b680f2.png)
 ***
->### ⁍ Project Info ⁌
+>## ⁍ Project Info ⁌
 * 프로젝트 명 : Card Captain
 * 개발 기간 :  2021.06.01 ~ 2021.08.03
 * 참여 인원 : 5명
 * 담당 업무 : 디자인레이아웃, 로그인, 회원가입, ID/PW 찾기, My page, 관리자페이지-회원
-***
->### ⁍ Use Technology ⁌
+
+>## ⁍ Use Technology ⁌
 * 개발 환경 : <img src="https://img.shields.io/badge/Windows 10-0078D6?style=flat-square&logo=Windows&logoColor=white"/>  
 * 사용 도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/SQL Developer-F80000?style=flat-square&logo=ORACLE&logoColor=white"/>    
 * 사용 기술 : <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=JAVA&logoColor=white"/> <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=flat-square&logo=JAVASCRIPT&logoColor=black"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/SPRING-6DB33F?style=flat-square&logo=SPRING&logoColor=white"/> <img src="https://img.shields.io/badge/ORACLE-F80000?style=flat-square&logo=ORACLE&logoColor=white"/> <img src="https://img.shields.io/badge/JQUERY-0769AD?style=flat-square&logo=JQUERY&logoColor=white"/>
-***
->### ⁍ Introduction ⁌
-***
->### ⁍ Develop Detail ⁌
 
+>## ⁍ Introduction ⁌
+>## ⁍ Develop Detail ⁌
 * 제안
   * -123
 * 기획
@@ -29,7 +26,7 @@
     * 신용카드와 체크카드 종류는 수백가지가 존재, 그에 따른 혜택 또한 수백가지가 존재
 
 * 디자인
-  * CSS
+  * 청결하고 안정적인 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=for-the-badge&logo"/>(#0047AB)를 사용했습니다. 여러카드의 다양한 디자인들을 안정감을 더불어 돋보이게 해줍니다.
     <details>
       <summary>이미지보기👀</summary>
 
@@ -43,6 +40,9 @@
   </details>
 
 * DB설계
+  * ERD - 
+  * 메타데이터 - 
+  * 테이블정의서 - 
     <details>
     <summary>이미지보기👀</summary>
 
@@ -53,11 +53,10 @@
     |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
-
 * 개발
   * JavaScript
-    * 회원가입시 조건을 상황에 맞게 ....
-    * https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265
+    * 회원가입시 조건을 상황에 맞게 CSS처리 했습니다.
+        [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265)
         <details>
         <summary>이미지보기👀</summary>
 
@@ -69,7 +68,7 @@
         
         </details>
   * Ajax를 활용한 동적Web 구현
-    * 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 대메뉴 이동을 제외하고는 화면의 리로드 없이 사용할 수 있도록 구현
+    * 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 대메뉴 이동을 제외하고는 화면의 리로드 없이 사용할 수 있도록 구현했습니다.
         <details>
         <summary>이미지보기👀</summary>
 
@@ -77,9 +76,31 @@
         |:--:|:--:|
         |1|![카드사별 랭킹](https://user-images.githubusercontent.com/81910342/128833893-0f9d0215-1413-4aed-97ac-8b0b2799e0dd.png)
         |2|![스크린샷(135)](https://user-images.githubusercontent.com/81910342/128833924-35922c5e-639f-4b52-84a0-cac34b106f80.png)
-
+        
         </details>
+        
+* 담당업무
+  * 메인레이아웃
+    <details>
+ 
+     * 대표색상을 이용하여 Header/Footer 구조와 메인의 슬라이드를 이용하여 각종 메뉴바의 가이드를 구성했습니다.
+       ![메인레이아웃](https://user-images.githubusercontent.com/81910342/128856764-a0bd32db-5870-47b5-a0bf-1e261758a75b.PNG)
+ 
+    </details>
+  * 로그인
+    <details>
+ 
+     * Header의 우측 로그인이미지를 클릭시
+       *  [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/76e2ea5a859b016c14a30f255fa030f8ddbdf31a/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L790)
+          ![로그인 1](https://user-images.githubusercontent.com/81910342/128860847-a8be7e75-7782-46fa-bd6f-f32a208fa175.PNG)
 
+    </details>
+  * 회원가입
+  * ID/PW 찾기
+  * Mypage
+  * 관리자페이지-회원
+  
+  
 * 테스트
 ***
 
