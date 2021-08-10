@@ -91,7 +91,7 @@
     <details>
  
      * Header의 우측 로그인이미지를 클릭시
-       *  [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/76e2ea5a859b016c14a30f255fa030f8ddbdf31a/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L790)
+       *  [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/8f52920ec304a59033318ea789e8009e1f28483b/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L790)
           ![로그인 1](https://user-images.githubusercontent.com/81910342/128860847-a8be7e75-7782-46fa-bd6f-f32a208fa175.PNG)
 
     </details>
