@@ -51,7 +51,7 @@
     |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
-<-- 
+<!-- 
   * ### 개발
   * JavaScript
     * 회원가입시 조건을 상황에 맞게 CSS처리 했습니다.
@@ -114,6 +114,20 @@
  
     </details>
   * ID/PW 찾기
+    <details>
+ 
+      * 모든 조건 만족시 아이디와 비밀번호를 알려줍니다.
+      * 이메일 인증 - 입력한 이메일로 랜덤코드 전송, 코드 일치시 가입가능합니다.
+        [JSP code👀]()
+        [Controller code👀]()
+        
+        <details>
+         
+         
+         
+        </details>
+ 
+    </details>
   * Mypage
   * 관리자페이지-회원
   
