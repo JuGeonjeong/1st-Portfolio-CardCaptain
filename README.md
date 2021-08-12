@@ -119,8 +119,7 @@
  
     ![스크린샷(140)](https://user-images.githubusercontent.com/81910342/129218093-5ffcb60b-b989-4e8f-b1cf-af81638e156d.png)
 
-
-</details>
+    </details>
   * Mypage
     <details>
  
