@@ -15,15 +15,16 @@
 
 >## ⁍ Introduction ⁌
 >## ⁍ Develop Detail ⁌
-* ### 제안
-  * -123
 * ### 기획
-  * 카드는 왜 필요한가?
-    * 신용카드 및 체크카드의 사용 多
-    * 카드 및 체크카드 소비 일상화 
+  * 카드의 사용량이 증가하는 이유?
+    * 편리함
+    * 소비에 따른 다양한 혜택
     * 인터넷과 온라인 쇼핑몰 등 사업영역 발전
+    * 페이의 사용량 증가
   * 하지만 !
     * 신용카드와 체크카드 종류는 수백가지가 존재, 그에 따른 혜택 또한 수백가지가 존재
+    * 카드를 보유한 대부분의 사용자들은 혜택을 누리지 못함
+    * 소비습관에 맞지않는 카드를 사용하는 사용자가 대다수
 
 * ### 디자인
   * 청결하고 안정적인 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=for-the-badge&logo"/>(#0047AB)를 사용했습니다. 여러카드의 다양한 디자인들을 안정감을 더불어 돋보이게 해줍니다.
@@ -50,7 +51,8 @@
     |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
     </details>
-* ### 개발
+<-- 
+  * ### 개발
   * JavaScript
     * 회원가입시 조건을 상황에 맞게 CSS처리 했습니다.
         [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265)
@@ -61,7 +63,6 @@
         |:--:|:--:|
         |회원가입|![회원가입 2](https://user-images.githubusercontent.com/81910342/128839805-7bb7abce-0e3e-49e3-a538-f5642e4643f4.png)
         |ID/PW 찾기|![IDPW 찾기](https://user-images.githubusercontent.com/81910342/128840482-ea6e997a-81ab-4247-b276-c9b10c922cfc.PNG)
-
         
         </details>
   * Ajax를 활용한 동적Web 구현
@@ -75,7 +76,7 @@
         |2|![스크린샷(135)](https://user-images.githubusercontent.com/81910342/128833924-35922c5e-639f-4b52-84a0-cac34b106f80.png)
         
         </details>
-        
+--> 
 * ### 담당업무
   * 메인레이아웃
     <details>
