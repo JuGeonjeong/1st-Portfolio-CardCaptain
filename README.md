@@ -103,32 +103,40 @@
  
       * 모든 조건 만족시 '가입완료'버튼이 활성화 됩니다.
       * 이메일 인증 - 입력한 이메일로 랜덤코드 전송, 코드 일치시 가입가능합니다.
-        [JSP code👀]()
-        [Controller code👀]()
-        
-        <details>
-         
-         
-         
-        </details>
+        [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L268)
+        [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserContoller.java#L98)
  
+        ![스크린샷(139)](https://user-images.githubusercontent.com/81910342/129216959-97ab7cea-a04e-471c-aba1-08f0e9c5d861.png)
+
     </details>
   * ID/PW 찾기
     <details>
  
       * 모든 조건 만족시 아이디와 비밀번호를 알려줍니다.
-      * 이메일 인증 - 입력한 이메일로 랜덤코드 전송, 코드 일치시 가입가능합니다.
-        [JSP code👀]()
-        [Controller code👀]()
-        
-        <details>
-         
-         
-         
-        </details>
+      * 이메일 인증 - '비밀번호 찾기'는 이메일 인증을 해줍니다.
+        [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/webapp/WEB-INF/views/user/searchmem.jsp#L291)
+        [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserContoller.java#L137)
+ 
+    ![스크린샷(140)](https://user-images.githubusercontent.com/81910342/129218093-5ffcb60b-b989-4e8f-b1cf-af81638e156d.png)
+
+
+</details>
+  * Mypage
+    <details>
+ 
+      * update를 사용하여 회원정보 변경을 할 수 있습니다.
+        [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+        [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserListContoller.java#L137)
+ 
+      * 카드사별 카드목록 데이터를 불러오고 추가,삭제를 할 수 있습니다.
+        [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/f63c2bd84256cc1d0087d98a90818f08ad3ce42e/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L818)
+        [Controller code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/java/com/gdj35/cdcp/WEB/user/UserContoller/UserListContoller.java#L27)
+ 
+      ![Mypage](https://user-images.githubusercontent.com/81910342/129218150-7ea9f8c3-006b-403d-92c9-8768a3fd3242.PNG)
+
  
     </details>
-  * Mypage
+
   * 관리자페이지-회원
   
   
