@@ -99,7 +99,7 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 >   ![Mypage 3](https://user-images.githubusercontent.com/81910342/129684408-0d2e4748-4e65-4e31-a15b-24be27a2c99b.PNG)
 >   ```java
 >    
->   	//회원정보 수정
+>   //회원정보 수정
 >	function update() {
 >		var params = $("#updateForm").serialize();
 >		
@@ -337,8 +337,8 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 >    
 >   ```java
 >	
->   	<!-- Enables the Spring MVC @Controller programming model -->
->	<annotation-driven />
+>   <!-- Enables the Spring MVC @Controller programming model -->
+>   <annotation-driven />
 > 
 >   ```	
 >   </details>
@@ -351,24 +351,24 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 > 
 >   ```java 
 > 
->   @Controller
->   public class UserListContoller {
->        @Autowired UserIListService useriListService;
-> 
->        @Autowired IPagingService iPagingService; 
->   .
->   .
->   .
->   @Service
->   public class UserListService implements UserIListService {
->	@Autowired UserIListDao useriListdao;
->   .
->   .
->   .
->   @Repository
->   public class UserListDao implements UserIListDao {
->	@Autowired 
->	public SqlSession sqlSession;
+>	@Controller
+>	public class UserListContoller {
+>		@Autowired UserIListService useriListService;
+>	 
+>		@Autowired IPagingService iPagingService; 
+>	.
+>	.
+>	.
+>	@Service
+>	public class UserListService implements UserIListService {
+>		@Autowired UserIListDao useriListdao;
+>	.
+>	.
+>	.
+>	@Repository
+>	public class UserListDao implements UserIListDao {
+>		@Autowired 
+>		public SqlSession sqlSession;
 > 
 >   ```
 > 
@@ -416,25 +416,25 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 >   Paging Bean ↴
 >   ```java
 > 
->   public class PagingBean {
->	  //페이지 게시글 시작번호
->	  int startCount;
->	  //페이지 게시글 종료번호
->	  int endCount;
->	  //마지막 페이지 번호
->	  int maxPcount;
->	  //현재 페이지 기준 시작 페이지 번호
->	  int startPcount;
->	  //현재 페이지 기준 종료 페이지 번호
->	  int endPcount;
+>	public class PagingBean {
+>		//페이지 게시글 시작번호
+>		int startCount;
+>		//페이지 게시글 종료번호
+>		int endCount;
+>		//마지막 페이지 번호
+>		int maxPcount;
+>		//현재 페이지 기준 시작 페이지 번호
+>		int startPcount;
+>		//현재 페이지 기준 종료 페이지 번호
+>		int endPcount;
 >	  
->	  //Getter & Setter
->	  public int getStartCount() {
->	  	   return startCount;
->	  }
->	  public void setStartCount(int startCount) {
->	  	   this.startCount = startCount;
->	  }
+>		//Getter & Setter
+>	public int getStartCount() {
+>		return startCount;
+>	}
+>	public void setStartCount(int startCount) {
+>		this.startCount = startCount;
+>	}
 >   .
 >   .
 >   .
@@ -444,42 +444,42 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 >   Paging Service ↴
 >   ```java
 > 
->   @Service
->   public class PagingService implements IPagingService{
+>	@Service
+>	public class PagingService implements IPagingService{
 >   	
->   //테이블 시작row
->   @Override
->   public int getStartCount(int page, int viewCnt) {
->    int startCount = 0;
->    startCount = (page - 1) * viewCnt + 1;
->    return startCount;
->   }
+>	//테이블 시작row
+>	@Override
+>	public int getStartCount(int page, int viewCnt) {
+>		int startCount = 0;
+>		startCount = (page - 1) * viewCnt + 1;
+>	return startCount;
+>	}
 >   
->   //테이블 종료row
->   @Override
->   public int getEndCount(int page, int viewCnt) {
->    int endCount = 0;
->    endCount = page * viewCnt;
->    return endCount;
->   }
+>	//테이블 종료row
+>	@Override
+>	public int getEndCount(int page, int viewCnt) {
+>		int endCount = 0;
+>		endCount = page * viewCnt;
+>		return endCount;
+>	}
 >   .
 >   .
 >   .
 >
->   //빈형식으로 취득
->   @Override
->    public PagingBean getPagingBean(int page, int maxCount, int viewCnt, int pageCnt) {
->    PagingBean pb = new PagingBean();
+>	//빈형식으로 취득
+>	@Override
+>	public PagingBean getPagingBean(int page, int maxCount, int viewCnt, int pageCnt) {
+>		PagingBean pb = new PagingBean();
 > 
->    pb.setStartCount(getStartCount(page, viewCnt));
->    pb.setEndCount(getEndCount(page, viewCnt));
->    pb.setMaxPcount(getMaxPcount(maxCount, viewCnt));
->    pb.setStartPcount(getStartPcount(page, pageCnt));
->    pb.setEndPcount(getEndPcount(page, maxCount, viewCnt, pageCnt));
+>		pb.setStartCount(getStartCount(page, viewCnt));
+>		pb.setEndCount(getEndCount(page, viewCnt));
+>		pb.setMaxPcount(getMaxPcount(maxCount, viewCnt));
+>		pb.setStartPcount(getStartPcount(page, pageCnt));
+>		pb.setEndPcount(getEndPcount(page, maxCount, viewCnt, pageCnt));
 > 
->    return pb;
->    }
->   }
+>		return pb;
+>		}
+>	}
 > 
 >   ```
 > 
