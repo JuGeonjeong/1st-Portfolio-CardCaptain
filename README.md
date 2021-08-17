@@ -2,19 +2,18 @@
 ## [ _Card Captain_ ] - 카드의 모든 혜택
 ![메인](https://user-images.githubusercontent.com/81910342/128857814-db0351c5-4e07-4032-9793-282e99b680f2.png)
 ***
->## ⁍ Project Info ⁌
+## ⁍ Project Info ⁌
 * 프로젝트 명 : Card Captain
 * 개발 기간 :  2021.06.01 ~ 2021.08.03
 * 참여 인원 : 5명
 * 담당 업무 : 디자인레이아웃, 로그인, 회원가입, ID/PW 찾기, My page, 관리자페이지-회원
 
->## ⁍ Use Technology ⁌
+## ⁍ Use Technology ⁌
 * 개발 환경 : <img src="https://img.shields.io/badge/Windows 10-0078D6?style=flat-square&logo=Windows&logoColor=white"/>  
 * 사용 도구 : <img src="https://img.shields.io/badge/Eclipse-2C2255?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/SQL Developer-F80000?style=flat-square&logo=ORACLE&logoColor=white"/>    
 * 사용 기술 : <img src="https://img.shields.io/badge/JAVA-007396?style=flat-square&logo=JAVA&logoColor=white"/> <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=flat-square&logo=JAVASCRIPT&logoColor=black"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/SPRING-6DB33F?style=flat-square&logo=SPRING&logoColor=white"/> <img src="https://img.shields.io/badge/ORACLE-F80000?style=flat-square&logo=ORACLE&logoColor=white"/> <img src="https://img.shields.io/badge/JQUERY-0769AD?style=flat-square&logo=JQUERY&logoColor=white"/>
 
->## ⁍ Introduction ⁌
->## ⁍ Develop Detail ⁌
+## ⁍ Introduction ⁌
 * ### 기획
   * 카드의 사용량이 증가하는 이유?
     * 편리함
@@ -27,7 +26,7 @@
     * 소비습관에 맞지않는 카드를 사용하는 사용자가 대다수
 
 * ### 디자인
-  * 청결하고 안정적인 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=for-the-badge&logo"/>(#0047AB)를 사용했습니다. 여러카드의 다양한 디자인들을 안정감을 더불어 돋보이게 해줍니다.
+  * 청결하고 안정적인 <img src="https://img.shields.io/badge/코발트블루-0047AB?style=for-the-badge&logo"/>(#0047AB)를 사용, 여러카드의 다양한 디자인들을 안정감을 더불어 돋보이게 해줍니다.
     <details>
       <summary>이미지보기👀</summary>
 
@@ -40,44 +39,331 @@
 
   </details>
 
-* ### DB설계
-    <details>
-    <summary>이미지보기👀</summary>
+## ⁍ Develop Detail ⁌
 
-    |feature|Description|
-    |:--:|:--:|
-    |ERD|![erd11](https://user-images.githubusercontent.com/81910342/128841759-c2abd214-1f6d-4b4d-bc8a-0cd65f7b518e.PNG)
-    |메타데이터|![메타데이터](https://user-images.githubusercontent.com/81910342/128842663-d322d964-a2f4-46a4-81cf-ea16c90136e7.PNG)
-    |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
 
-    </details>
 <!-- 
-  * ### 개발
-  * JavaScript
-    * 회원가입시 조건을 상황에 맞게 CSS처리 했습니다.
-        [코드보기👀](https://github.com/financeTeamProject/CardCaptain/blob/e0ec856e17c14c7f938b45b3799f83c9797b644a/CDCP/src/main/webapp/WEB-INF/views/user/join.jsp#L265)
-        <details>
-        <summary>이미지보기👀</summary>
+  * 관리자페이지-회원
+ 
+* 테스트
+-->
 
-        |feature|Description|
-        |:--:|:--:|
-        |회원가입|![회원가입 2](https://user-images.githubusercontent.com/81910342/128839805-7bb7abce-0e3e-49e3-a538-f5642e4643f4.png)
-        |ID/PW 찾기|![IDPW 찾기](https://user-images.githubusercontent.com/81910342/128840482-ea6e997a-81ab-4247-b276-c9b10c922cfc.PNG)
-        
-        </details>
-  * Ajax를 활용한 동적Web 구현
-    * 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 대메뉴 이동을 제외하고는 화면의 리로드 없이 사용할 수 있도록 구현했습니다.
-        <details>
-        <summary>이미지보기👀</summary>
+#### 📝 el 태그 및 jstl을 활용한 정적 web 구현
+Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구현
 
-        |feature|Description|
-        |:--:|:--:|
-        |1|![카드사별 랭킹](https://user-images.githubusercontent.com/81910342/128833893-0f9d0215-1413-4aed-97ac-8b0b2799e0dd.png)
-        |2|![스크린샷(135)](https://user-images.githubusercontent.com/81910342/128833924-35922c5e-639f-4b52-84a0-cac34b106f80.png)
-        
-        </details>
---> 
-* ### 담당업무
+>   <details>
+>    
+>   ![지도](https://user-images.githubusercontent.com/81910342/129653848-6e922c3e-6176-45b5-90f3-b9357faf0f57.PNG)
+>   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L1002)
+> 
+>   </details>
+
+---
+#### 📝 Post 전송 방식의 Ajax를 활용한 동적 Web 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+>   <details>
+>    
+>   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+>   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+> 
+>   </details>
+
+---
+#### 📝 Maven을 이용한 Spring 라이브러리 관리
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 Annotation-driven 설정을 통한 Annotation 기능 사용
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 어노테이션 사용으로 소스 코드에 메타데이터를 보관
+컴파일 타임의 체크뿐 아니라 어노테이션 API를 사용해 코드 가독성을 높여줌
+
+   <details>
+ 
+   ```java 
+ 
+   @Controller
+   public class UserListContoller {
+       @Autowired UserIListService useriListService;
+ 
+       @Autowired IPagingService iPagingService; 
+   .
+   .
+   .
+   @Service
+   public class UserListService implements UserIListService {
+   	   @Autowired UserIListDao useriListdao;
+   .
+   .
+   .
+   @Repository
+   public class UserListDao implements UserIListDao {
+	      @Autowired 
+	      public SqlSession sqlSession;
+ 
+   ```
+ 
+   </details>
+
+---
+#### 📝 Bean을 활용한 Paging 처리
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![페이징](https://user-images.githubusercontent.com/81910342/129672542-3bf27936-906d-4c94-b435-bdc0bc0ef0da.PNG)
+ 
+   Controller
+   ```java 
+ 
+   // 회원 목록 리스트
+	  @RequestMapping(value="/mLists",
+	  		method = RequestMethod.POST,
+	  		produces = "text/json;charset=UTF-8")
+	  @ResponseBody
+	  public String mLists(
+	  		@RequestParam HashMap<String, String> params) throws Throwable{
+	  	ObjectMapper mapper = new ObjectMapper();
+	  	Map<String, Object> modelMap = new HashMap<String, Object>();
+	  	int page = Integer.parseInt(params.get("page"));
+	  	
+	  	// 페이징
+	  	int cnt = useriListService.mCnt(params);
+	  	PagingBean pb = iPagingService.getPagingBean(page, cnt);
+	  	
+	  	params.put("startCnt", Integer.toString(pb.getStartCount()));
+	  	params.put("endCnt", Integer.toString(pb.getEndCount()));
+	  	
+	  	// 리스트
+	  	List<HashMap<String, String>> list = useriListService.mList(params);
+	  	modelMap.put("list", list);
+	  	modelMap.put("pb", pb);
+	  	
+	  	return mapper.writeValueAsString(modelMap);
+	  }
+ 
+   ```
+ 
+   Paging Bean
+   ```java
+ 
+   public class PagingBean {
+	  //페이지 게시글 시작번호
+	  int startCount;
+	  //페이지 게시글 종료번호
+	  int endCount;
+	  //마지막 페이지 번호
+	  int maxPcount;
+	  //현재 페이지 기준 시작 페이지 번호
+	  int startPcount;
+	  //현재 페이지 기준 종료 페이지 번호
+	  int endPcount;
+	  
+	  //Getter & Setter
+	  public int getStartCount() {
+	  	   return startCount;
+	  }
+	  public void setStartCount(int startCount) {
+	  	   this.startCount = startCount;
+	  }
+   .
+   .
+   .
+ 
+   ```
+   
+   Paging Service
+   ```java
+ 
+   @Service
+   public class PagingService implements IPagingService{
+   	
+   //테이블 시작row
+   @Override
+   public int getStartCount(int page, int viewCnt) {
+    int startCount = 0;
+    startCount = (page - 1) * viewCnt + 1;
+    return startCount;
+   }
+   
+   //테이블 종료row
+   @Override
+   public int getEndCount(int page, int viewCnt) {
+    int endCount = 0;
+    endCount = page * viewCnt;
+    return endCount;
+   }
+   .
+   .
+   .
+
+   //빈형식으로 취득
+   @Override
+    public PagingBean getPagingBean(int page, int maxCount, int viewCnt, int pageCnt) {
+    PagingBean pb = new PagingBean();
+ 
+    pb.setStartCount(getStartCount(page, viewCnt));
+    pb.setEndCount(getEndCount(page, viewCnt));
+    pb.setMaxPcount(getMaxPcount(maxCount, viewCnt));
+    pb.setStartPcount(getStartPcount(page, pageCnt));
+    pb.setEndPcount(getEndPcount(page, maxCount, viewCnt, pageCnt));
+ 
+    return pb;
+    }
+   }
+ 
+   ```
+ 
+   </details>
+
+---
+#### 📝 HttpSession을 활용한 로그인 구현
+Tomcat 서버를 활용하여 로그인 정보를 Session에 보관하여 사용
+
+   <details>
+    
+   ```java
+    
+   // 로그인메인
+	  @RequestMapping(value="/logins",
+	  		method = RequestMethod.POST,
+	  		produces = "text/json;charset=UTF-8")
+	  	@ResponseBody
+	  	public String login(
+	  			HttpSession session,
+	  			@RequestParam HashMap<String,String> params) throws Throwable {
+	  			System.out.println(params);
+	  		ObjectMapper mapper = new ObjectMapper();
+	  		
+	  		Map<String, Object> modelMap = new HashMap<String, Object>();
+	  		
+	  		params.put("mPw",Utils.encryptAES128(params.get("mPw")));
+	  		
+	  		HashMap<String,String> data = useriService.getM(params);
+	  		
+	  		if(data != null) {
+	  			session.setAttribute("sMNo", data.get("MEMBER_NO"));
+	  			session.setAttribute("sMId", data.get("MEMBER_ID"));
+	  			session.setAttribute("sMPw", data.get("MEMBER_PW"));
+	  			session.setAttribute("sMPw2",Utils.decryptAES128(data.get("MEMBER_PW")));
+	  			session.setAttribute("sMBi", data.get("MEMBER_BIRTH"));
+	  			session.setAttribute("sMCo", data.get("CONTACT"));
+	  			session.setAttribute("sMNm", data.get("NICKNAME"));
+	  			session.setAttribute("sMNa", data.get("E_NAME"));
+	  			session.setAttribute("sMAd", data.get("E_ADDRESS"));
+	  			
+	  			modelMap.put("resMsg", "success");
+	  			
+	  		} else {
+	  			modelMap.put("resMsg", "failed");
+	  		}
+	  	return mapper.writeValueAsString(modelMap);
+	  }
+   
+   ```
+ 
+   </details>
+
+---
+#### 📝 multi part form을 이용한 File Upload 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 AES 알고리즘 방식을 이용한 암호화 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 AOP - Aspect를 활용 및 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 Ansi SQL 사용으로 쿼리의 가독성 확보
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 MyBatis에서 Dynamic SQL 사용으로 쿼리의 재사용 및 쿼리 최소화
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 Git을 통한 협업
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+#### 📝 DB설계
+   <details>
+   <summary>이미지보기👀</summary>
+
+   |feature|Description|
+   |:--:|:--:|
+   |ERD|![erd11](https://user-images.githubusercontent.com/81910342/128841759-c2abd214-1f6d-4b4d-bc8a-0cd65f7b518e.PNG)
+   |메타데이터|![메타데이터](https://user-images.githubusercontent.com/81910342/128842663-d322d964-a2f4-46a4-81cf-ea16c90136e7.PNG)
+   |테이블정의서|![1](https://user-images.githubusercontent.com/81910342/128814142-b6e959a7-6759-4c79-89c1-91559edaf6d5.PNG)  
+ 
+   </details>
+
+---
+### 담당업무
+  <details>
+ 
   * 메인레이아웃
     <details>
  
@@ -133,45 +419,5 @@
  
       ![Mypage](https://user-images.githubusercontent.com/81910342/129218150-7ea9f8c3-006b-403d-92c9-8768a3fd3242.PNG)
 
-    </details>
-
-
-<!-- 
-  * 관리자페이지-회원
- 
-* 테스트
--->
-***
-### el 태그 및 jstl을 활용한 정적 web 구현
-Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구현
-
-   <details>
-    
-   ![지도](https://user-images.githubusercontent.com/81910342/129653848-6e922c3e-6176-45b5-90f3-b9357faf0f57.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L1002)
- 
-   </details>
-
----
-### Post 전송 방식의 Ajax를 활용한 동적 Web 구현
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
-
-   <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- 
-   </details>
-
----
-### Post 전송 방식의 Ajax를 활용한 동적 Web 구현
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
-
-   <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- 
-   </details>
-
----
+      </details>
+  </details>
