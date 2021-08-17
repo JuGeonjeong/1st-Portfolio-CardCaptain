@@ -750,7 +750,6 @@ Git을 활용하여 팀 작업을 진행 및 파트별 개발을 통한 개발 �
 #### 📝 DB설계
 	
 >   <details>
->   <summary>이미지보기👀</summary>
 >
 >   |feature|Description|
 >   |:--:|:--:|
