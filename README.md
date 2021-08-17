@@ -130,7 +130,7 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
     
    ![페이징](https://user-images.githubusercontent.com/81910342/129672542-3bf27936-906d-4c94-b435-bdc0bc0ef0da.PNG)
  
-   Controller
+   Controller ↴
    ```java 
  
    // 회원 목록 리스트
@@ -161,7 +161,7 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
  
    ```
  
-   Paging Bean
+   Paging Bean ↴
    ```java
  
    public class PagingBean {
@@ -189,7 +189,7 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
  
    ```
    
-   Paging Service
+   Paging Service ↴
    ```java
  
    @Service
@@ -282,46 +282,164 @@ Tomcat 서버를 활용하여 로그인 정보를 Session에 보관하여 사용
    </details>
 
 ---
-#### 📝 multi part form을 이용한 File Upload 구현
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
-
+#### 📝 AES 알고리즘 방식을 이용한 암호화,복호화 구현
+param에 들어 있는 비밀번호 키를 AES 알고리즘 방식으로 암호화 후 재정의
+	   
    <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- 
-   </details>
+   
+   Controller ↴
+   ```java
+	   
+   	@RequestMapping(value="/logins",
+			method = RequestMethod.POST,
+			produces = "text/json;charset=UTF-8")
+		@ResponseBody
+		public String login(
+				HttpSession session,
+				@RequestParam HashMap<String,String> params) throws Throwable {
+				System.out.println(params);
+			ObjectMapper mapper = new ObjectMapper();
+			
+			Map<String, Object> modelMap = new HashMap<String, Object>();
+			
+	                // 암호화
+			params.put("mPw",Utils.encryptAES128(params.get("mPw")));
+			
+			HashMap<String,String> data = useriService.getM(params);
+			
+			if(data != null) {
+				session.setAttribute("sMNo", data.get("MEMBER_NO"));
+				session.setAttribute("sMId", data.get("MEMBER_ID"));
+				session.setAttribute("sMPw", data.get("MEMBER_PW"));
+	                        // 복호화
+				session.setAttribute("sMPw2",Utils.decryptAES128(data.get("MEMBER_PW")));
+				session.setAttribute("sMBi", data.get("MEMBER_BIRTH"));
+				session.setAttribute("sMCo", data.get("CONTACT"));
+				session.setAttribute("sMNm", data.get("NICKNAME"));
+				session.setAttribute("sMNa", data.get("E_NAME"));
+				session.setAttribute("sMAd", data.get("E_ADDRESS"));
+				
+				modelMap.put("resMsg", "success");
+				
+			} else {
+				modelMap.put("resMsg", "failed");
+			}
+		return mapper.writeValueAsString(modelMap);
+	}	   
+	   
+   ```
+	
+   Utils ↴
+   ```java
+	
+   public class Utils {
+	
+	public static String getPrimaryKey() {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+		return formatter.format(new java.util.Date()) + RandomStringUtils.randomNumeric(6);
+	}
+	
+	public static String encryptAES128(String value) throws Throwable {
+		SecretKeySpec keySpec 
+			= new SecretKeySpec(CommonProperties.SECURE_KEY.getBytes("UTF-8"), "AES");
 
----
-#### 📝 AES 알고리즘 방식을 이용한 암호화 구현
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+		SecretKeySpec skeySpec = new SecretKeySpec(
+			DatatypeConverter.parseBase64Binary(
+				(String) DatatypeConverter.printBase64Binary(keySpec.getEncoded())), "AES");
 
-   <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- 
-   </details>
+		Cipher cipher = Cipher.getInstance("AES");
+		cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+		byte[] encrypted = cipher.doFinal(value.getBytes());
 
----
-#### 📝 AOP - Aspect를 활용 및 구현
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+		String encodeString = DatatypeConverter.printBase64Binary(encrypted);
 
-   <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+		return encodeString;
+	}
+
+	public static String decryptAES128(String value) throws Throwable {
+		SecretKeySpec keySpec = new SecretKeySpec(CommonProperties.SECURE_KEY.getBytes("UTF-8"), "AES");
+		SecretKeySpec sKeySpec = new SecretKeySpec(
+				DatatypeConverter.parseBase64Binary(DatatypeConverter.printBase64Binary(keySpec.getEncoded())), "AES");
+
+		Cipher cipher = Cipher.getInstance("AES");
+		cipher.init(Cipher.DECRYPT_MODE, sKeySpec);
+
+		byte[] decodeBytes = DatatypeConverter.parseBase64Binary(value); //문자열 형태의 파라메터를 배열에 바이트 변환 후 삽입
+
+		byte[] decryptBytes = cipher.doFinal(decodeBytes); // 복호화
+
+		return new String(decryptBytes);
+	}
+	
+	public static HashMap<String, String> toLowerMapKey(HashMap<String, String> oldMap) throws Throwable {
+		Set<String> keySet = oldMap.keySet();
+		
+		Iterator<String> keys = keySet.iterator();
+		
+		HashMap<String, String> newMap = new HashMap<String, String>();
+		
+		while(keys.hasNext()) {
+			String key = keys.next();
+			newMap.put(key.toLowerCase(), String.valueOf(oldMap.get(key)));
+		}
+		return newMap;
+	}
+	
+	public static List<HashMap<String, String>> toLowerListMapKey(List<HashMap<String, String>> oldList) {
+		List<HashMap<String, String>> newList = new ArrayList<HashMap<String, String>>();
+		
+		for(HashMap<String, String> oldMap : oldList) {
+			Set<String> keySet = oldMap.keySet();
+			
+			Iterator<String> keys = keySet.iterator();
+			
+			HashMap<String, String> newMap = new HashMap<String, String>();
+			
+			while(keys.hasNext()) {
+				String key = keys.next();
+				newMap.put(key.toLowerCase(), String.valueOf(oldMap.get(key)));
+			}
+			newList.add(newMap);
+		}
+		return newList;
+	}
+}
+	   
+   ```
  
    </details>
 
 ---
 #### 📝 Ansi SQL 사용으로 쿼리의 가독성 확보
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+테이블간 관계가 FROM에서 명시 및 WHERE에서 조건 확인
 
    <details>
     
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+   ```sql
+	   
+	<select id="getList" parameterType="hashmap" resultType="hashmap">
+		SELECT C.*
+		FROM(SELECT CARD_NO, CARD_CMP_NO, DECODE(CARD_TYPE, 0, '신용카드','체크카드') AS CARD_TYPE, CARD_NAME,
+		     RANK() OVER(PARTITION BY CARD_CMP_NO ORDER BY CARD_NO DESC) AS RNK
+	    	FROM CARDS
+	    	ORDER BY CARD_NO ASC) C
+		WHERE C.CARD_CMP_NO = ${cmpNo}
+    		AND C.RNK BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<select id="addCard" parameterType="hashmap">
+		INSERT INTO HAVECARDS(CARD_NO,MEMBER_NO)
+		VALUES(#{lists}, #{mNo})
+	</select>
+	
+	<select id="getAddList" parameterType="hashmap" resultType="hashmap">
+		SELECT H.CARD_NO, H.MEMBER_NO, C.CARD_NAME, DECODE(CARD_TYPE, 0, '신용카드','체크카드') AS CARD_TYPE
+		FROM HAVECARDS H INNER JOIN CARDS C
+		                         ON H.CARD_NO = C.CARD_NO
+		WHERE H.MEMBER_NO = #{memNo}
+	</select>
+	   
+   ```
  
    </details>
 
