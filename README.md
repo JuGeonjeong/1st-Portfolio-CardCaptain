@@ -133,7 +133,6 @@
  
       ![Mypage](https://user-images.githubusercontent.com/81910342/129218150-7ea9f8c3-006b-403d-92c9-8768a3fd3242.PNG)
 
- 
     </details>
 
 
@@ -143,4 +142,36 @@
 * 테스트
 -->
 ***
+### el 태그 및 jstl을 활용한 정적 web 구현
+Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구현
 
+   <details>
+    
+   ![지도](https://user-images.githubusercontent.com/81910342/129653848-6e922c3e-6176-45b5-90f3-b9357faf0f57.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L1002)
+ 
+   </details>
+
+---
+### Post 전송 방식의 Ajax를 활용한 동적 Web 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
+### Post 전송 방식의 Ajax를 활용한 동적 Web 구현
+로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+
+   <details>
+    
+   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+ 
+   </details>
+
+---
