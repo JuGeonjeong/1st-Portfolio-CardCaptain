@@ -54,7 +54,39 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 >   <details>
 >    
 >   ![지도](https://user-images.githubusercontent.com/81910342/129653848-6e922c3e-6176-45b5-90f3-b9357faf0f57.PNG)
->   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/home.jsp#L1002)
+>   ```html
+>	
+>   <!-- Map html Start -->
+>	<div class="slide1">
+>		<div class="map_area" style="width:1600px; border-width:7px;padding:40px;margin:0 auto;">
+>			<h1><span id="cardName">[${randomCard.CARD_NAME}]</span>&nbsp;<span id="cardSummary">${randomCard.CARD_SUMMARY}</span></h1><br/>
+>			<c:set var="size" value="${fn:length(arr)}" />
+>			<c:forEach var ="i" begin="0" end ="${size-1}">
+>				<input type="button" value="${arr[i]}" onclick="sendPlace(this);" style="width:auto;padding-left:5px;padding-right:5px;" />
+>			</c:forEach>
+>			<input type="hidden" value="${randomCard.CARD_NO}">
+>			
+>			<div class="map_wrap">
+>				<div id="menu_wrap" class="bg_white">
+>				<div class="option">
+>				<div>
+>					<form onsubmit="searchPlaces(); return false;">
+>						<input type="text" value="버튼을 클릭해 주세요" id="keyword" size="40" readonly="readonly" style="border-style:none;border-radius:5px;height:25px;width:350px;"> 
+>						<button type="submit" id="serachButton" style="visibility: hidden;">검색하기</button>
+>					</form>
+>				</div>
+>				</div>
+>				
+>				<ul id="placesList"></ul>
+>				<div id="pagination"></div>
+>				</div>
+>				<div id="map" style="width:70%;height:100%;position:relataive;overflow:hidden;"></div>
+>			</div>
+>		</div><br/>
+>	</div>
+>	<!-- Map html End -->
+>	
+>   ```	
 > 
 >   </details>
 
@@ -63,33 +95,253 @@ Controller → jsp 이동 시 view resolver가 view 경로 추가 및 화면 구
 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
 
 >   <details>
+>	
+>   ![Mypage 3](https://user-images.githubusercontent.com/81910342/129684408-0d2e4748-4e65-4e31-a15b-24be27a2c99b.PNG)
+>   ```java
 >    
->   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
->   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
-> 
+>   	//회원정보 수정
+>	function update() {
+>		var params = $("#updateForm").serialize();
+>		
+>		$.ajax({
+>			url: "memUpdates",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				if(res.resMsg == "success") {
+>					alert("정보가 수정 되었습니다.");
+>					alert("다시 로그인 해주세요.")
+>					location.href = "testALogout";
+>				}
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		});
+>	}
+>	
+>	//회원 탈퇴
+>	function leave() {
+>		var params = $("#updateForm").serialize();
+>		
+>		$.ajax({
+>			url: "memLeave",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				if(res.resMsg == "success") {
+>					alert("회원탈퇴 되었습니다.");
+>					location.href = "testALogout3";
+>				}
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		});
+>	}
+>	
+>	// 카드추가
+>	function addcard() {
+>		var params = $("#addcardlist").serialize();
+>		
+>		$.ajax({
+>			url: "addcards",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				addLists();
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		});
+>	}
+>	
+>	// 카드리스트
+>	function reloadList() {
+>		var params = $("#joinCard").serialize();
+>		
+>		$.ajax({
+>			url: "joincards",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				drawList(res.list);
+>				drawPaging(res.pb);
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		});
+>	}
+>	
+>	// 목록 그리기
+>	function drawList(list) {
+>		var html = "";
+>		// 	" +  + " : 만들어놓고 붙여넣어도 됨.
+>		for(var d of list) {
+>			html += "<tr cNo=\"" + d.CARD_NO + "\">";
+>			html += "<td>" + "" + "</td>";
+>			html += "<td class=\"a\">" + d.CARD_TYPE + "</td>";
+>			html += "<td class=\"b\">" + d.CARD_NAME + "</td>";
+>			html += "<td>" + "<button value=\"추가\" class=\"addbtn\" id=addbtn>추가</button>" + "</td>";
+>			html += "</tr>";
+>			
+>		}
+>		$(".list_wrap tbody").html(html);
+>		
+>		var lists = "";
+>		
+>		$(".list_wrap tr td button").on("click", function() {
+>			lists = $(this).parents().parents().attr("cno");
+>			console.log(lists);
+>			$("#addcardlist #lists").val(lists);
+>			
+>			addcard();
+>		});
+>	}
+>	
+>	// 보유카드리스트
+>	function addLists() {
+>		var params = $("#joinCard").serialize();
+>		
+>		$.ajax({
+>			url: "addLists",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				drawAddList(res.addlist);
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		});
+>	}
+>	
+>	// 리스트 삭제
+>	function deletelist() {
+>		var params = $("#cardDelete").serialize();
+>		 $.ajax({
+>			url: "cardDeletes",
+>			type: "post",
+>			dataType: "json",
+>			data: params,
+>			success: function (res) {
+>				addLists();
+>			},
+>			error: function (request, status, error) {
+>				console.log(error);
+>			}
+>		}); 
+>	}
+>	
+>	addLists();
+>	
+>	// 보유카드 그리기
+>	function drawAddList(addlist) {
+>		var add = "";
+>		console.log(addlist);
+>		
+>		for(var i = 0; i < addlist.length; i++){
+>			add += "<tr cNo=\"" + addlist[i].CARD_NO + "\">";
+>			add += "<td>" + "" + "</td>";
+>			add += "<td class=\"a\">" + addlist[i].CARD_TYPE + "</td>";
+>			add += "<td class=\"b\">" + addlist[i].CARD_NAME + "</td>";
+>			add += "<td>" + "<button value=\"추가\" class=\"deletebtn\" id=\"deletebtn\">삭제</button>" + "</td>";
+>			add += "</tr>";
+>			
+>		}
+>		$(".add_wrap tbody").html(add);
+>			
+>		// 20210725
+>		$(".add_wrap tr td button").on("click", function () {
+>			var html = "";
+>			var lists = $(this).parents().parents().attr("cno");
+>			$("#cardDelete #lists").val(lists);
+>			
+>			deletelist();
+>			//addLists();
+>		});
+>	}
+>   
+>   ```
 >   </details>
-
+	
 ---
 #### 📝 Maven을 이용한 Spring 라이브러리 관리
 로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
 
 >   <details>
 >    
->   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
->   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+>    ```java
+>	
+>	<!-- Spring -->
+>	<dependency>
+>		<groupId>org.springframework</groupId>
+>		<artifactId>spring-context</artifactId>
+>		<version>${org.springframework-version}</version>
+>		<exclusions>
+>			<!-- Exclude Commons Logging in favor of SLF4j -->
+>			<exclusion>
+>				<groupId>commons-logging</groupId>
+>				<artifactId>commons-logging</artifactId>
+>			</exclusion>
+>		</exclusions>
+>	</dependency>
+>	<dependency>
+>		<groupId>org.springframework</groupId>
+>		<artifactId>spring-webmvc</artifactId>
+>		<version>${org.springframework-version}</version>
+>	</dependency>
+>	<dependency>
+>		<groupId>org.springframework</groupId>
+>		<artifactId>spring-test</artifactId>
+>		<version>${org.springframework-version}</version>
+>	</dependency>
+>	
+>	<!-- AspectJ -->
+>	<dependency>
+>		<groupId>org.aspectj</groupId>
+>		<artifactId>aspectjrt</artifactId>
+>		<version>${org.aspectj-version}</version>
+>	</dependency>
+>	
+>	<dependency>
+>		<groupId>org.aspectj</groupId>
+>		<artifactId>aspectjweaver</artifactId>
+>		<version>${org.aspectj-version}</version>
+>	</dependency>
+>	
+>	<dependency>
+>		<groupId>org.aspectj</groupId>
+>		<artifactId>aspectjtools</artifactId>
+>		<version>${org.aspectj-version}</version>
+>	</dependency>
+>	
+>	...
 > 
+>   ```
+>	
 >   </details>
 
 ---
 #### 📝 Annotation-driven 설정을 통한 Annotation 기능 사용
-로딩된 페이지 상에서 동적으로 웹을 구현함으로써 화면의 리로드 없이 사용할 수 있도록 구현
+주석에 의미를 부여하고 재사용성 증가
 
- >  <details>
- >   
- >  ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
- >  [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- >
- >  </details>
+>   <details>
+>    
+>   ```java
+>	
+>   	<!-- Enables the Spring MVC @Controller programming model -->
+>	<annotation-driven />
+> 
+>   ```	
+>   </details>
 
 ---
 #### 📝 어노테이션 사용으로 소스 코드에 메타데이터를 보관
@@ -487,12 +739,12 @@ param에 들어 있는 비밀번호 키를 AES 알고리즘 방식으로 암호�
 #### 📝 Git을 통한 협업
 Git을 활용하여 팀 작업을 진행 및 파트별 개발을 통한 개발 일정 단축
 
-   <details>
-    
-   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
-   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
- 
-   </details>
+>   <details>
+>    
+>   ![Mypage](https://user-images.githubusercontent.com/81910342/129649089-c6e3b25a-af83-4c59-bd4a-fcfac2c03bd9.PNG)
+>   [JSP code👀](https://github.com/financeTeamProject/CardCaptain/blob/421e8fefd6c32b0b905de34620262caa0778fc48/CDCP/src/main/webapp/WEB-INF/views/user/mypage.jsp#L683)
+> 
+>   </details>
 
 ---
 #### 📝 DB설계
